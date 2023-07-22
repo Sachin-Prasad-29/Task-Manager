@@ -8,7 +8,7 @@ const showTasks = async () => {
   loadingDOM.style.visibility = 'visible'
   try {
     const {
-      data: { tasks },
+      data: { tasks }
     } = await axios.get('/api/v1/tasks')
     if (tasks.length < 1) {
       tasksDOM.innerHTML = '<h5 class="empty-list">No tasks in your list</h5>'
@@ -74,11 +74,11 @@ formDOM.addEventListener('submit', async (e) => {
     showTasks()
     taskInputDOM.value = ''
     formAlertDOM.style.display = 'block'
-    formAlertDOM.textContent = `success, task added`
+    formAlertDOM.textContent = 'success, task added'
     formAlertDOM.classList.add('text-success')
   } catch (error) {
     formAlertDOM.style.display = 'block'
-    formAlertDOM.innerHTML = `error, please try again`
+    formAlertDOM.innerHTML = 'error, please try again'
   }
   setTimeout(() => {
     formAlertDOM.style.display = 'none'
